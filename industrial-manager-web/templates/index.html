@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Industrial Manager</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>🏭 INDUSTRIAL MANAGER</h1>
+    <div id="status">Carregando fábrica...</div>
+  </header>
+
+  <main class="layout">
+    <section class="factory-panel">
+      <canvas id="factory" width="900" height="600"></canvas>
+      <div class="stats">
+        <div>📦 Estoque total: <strong id="stock-total">0</strong></div>
+        <div>🏭 Máquinas: <strong id="machine-total">0</strong></div>
+        <div>👷 Funcionários: <strong id="employee-total">0</strong></div>
+      </div>
+    </section>
+
+    <aside class="controls">
+      <h2>Controle da fábrica</h2>
+      <button id="pause">⏸ Pausar</button>
+      <button id="produce">▶ Produzir</button>
+      <button id="hire">👷 Contratar</button>
+
+      <label for="machine-type">Tipo de máquina</label>
+      <select id="machine-type">
+        <option value="prensa">Prensa — $400</option>
+        <option value="montagem">Montagem — $800</option>
+        <option value="forno">Forno — $1200</option>
+      </select>
+
+      <p class="hint">Clique no chão da fábrica para posicionar a máquina selecionada.</p>
+      <button id="buy-machine">🏭 Comprar máquina</button>
+      <button id="repair">🔧 Reparar máquina</button>
+      <button id="sell-machine">💰 Vender máquina</button>
+      <button id="motivate">😊 Motivar equipe ($100)</button>
+
+      <hr>
+      <h3>Estoque</h3>
+      <div id="inventory"></div>
+
+      <hr>
+      <h3>Funcionários</h3>
+      <div id="employees"></div>
+
+      <hr>
+      <button id="save">💾 Salvar partida</button>
+      <button id="reset" class="danger">Nova partida</button>
+      <p id="message" role="status">Bem-vindo!</p>
+    </aside>
+  </main>
+
+  <script src="/static/game.js"></script>
+</body>
+</html>
